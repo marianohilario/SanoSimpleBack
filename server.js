@@ -9,6 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Hello from the server!");
+});
+
 app.post("/crear-link-pago", async (req, res) => {
     const { userId, email } = req.body; // userId y email se obtienen de ManyChat
 
